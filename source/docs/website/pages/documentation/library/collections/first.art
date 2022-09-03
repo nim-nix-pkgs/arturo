@@ -1,0 +1,37 @@
+name: "first"
+type: :function
+module: "Collections"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Collections.nim#L303"
+description: "return the first item of the given collection"
+returns: [
+        :any
+    ]
+examples: [
+        {
+            print first "this is some text"       ; t
+            print first ["one" "two" "three"]     ; one
+        }
+         {
+            print first.n:2 ["one" "two" "three"] ; one two
+        }
+    ]
+attributes: #[
+    n: #[
+        types: [
+                :integer
+            ]
+        description: "get first <n> items"
+        ]
+    ]
+arguments: #[
+    collection: [
+            :string
+             :block
+        ]
+    ]
+related: [
+        "Collections/last"
+         "Collections/index"
+         "Collections/insert"
+         "Collections/min"
+    ]

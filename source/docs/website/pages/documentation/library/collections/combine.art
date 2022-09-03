@@ -1,0 +1,30 @@
+name: "combine"
+type: :function
+module: "Collections"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Collections.nim#L139"
+description: "get combination of elements in given collections"
+returns: [
+        :block
+    ]
+examples: [
+        {
+            combine ["one" "two" "three"] [1 2 3]
+            ; => [[1 "one"] [2 "two"] [3 "three"]]
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    collectionA: [
+            :block
+        ]
+    collectionB: [
+            :block
+        ]
+    ]
+related: [
+        "Collections/slice"
+         "Collections/min"
+         "Collections/sample"
+         "Collections/chop"
+    ]

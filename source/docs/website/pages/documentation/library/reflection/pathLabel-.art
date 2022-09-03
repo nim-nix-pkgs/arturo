@@ -1,0 +1,27 @@
+name: "pathLabel?"
+type: :function
+module: "Reflection"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Reflection.nim#L607"
+description: "checks if given value is of type :pathLabel"
+returns: [
+        :logical
+    ]
+examples: [
+        {
+            pathLabel? first [a\b\c: x]
+            ; => true
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    value: [
+            :any
+        ]
+    ]
+related: [
+        "Reflection/path?"
+         "Reflection/database?"
+         "Reflection/label?"
+         "Reflection/date?"
+    ]

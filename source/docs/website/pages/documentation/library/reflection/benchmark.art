@@ -1,0 +1,44 @@
+name: "benchmark"
+type: :function
+module: "Reflection"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Reflection.nim#L166"
+description: "benchmark given code"
+returns: [
+        :floating
+         :nothing
+    ]
+examples: [
+        {
+            benchmark [ 
+                ; some process that takes some time
+                loop 1..10000 => prime? 
+            ]
+            
+            ; [benchmark] time: 0.065s
+        }
+         {
+            benchmark.get [
+                loop 1..10000 => prime?
+            ]
+            ; => 0.3237628936767578
+        }
+    ]
+attributes: #[
+    get: #[
+        types: [
+                :logical
+            ]
+        description: "get benchmark time"
+        ]
+    ]
+arguments: #[
+    action: [
+            :block
+        ]
+    ]
+related: [
+        "Reflection/stack"
+         "Reflection/inspect"
+         "Reflection/symbols"
+         "Reflection/binary?"
+    ]

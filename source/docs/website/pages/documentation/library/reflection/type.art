@@ -1,0 +1,27 @@
+name: "type"
+type: :function
+module: "Reflection"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Reflection.nim#L768"
+description: "get type of given value"
+returns: [
+        :type
+    ]
+examples: [
+        {
+            print type 18966          ; :integer
+            print type "hello world"  ; :string
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    value: [
+            :any
+        ]
+    ]
+related: [
+        "Reflection/attr"
+         "Reflection/attrs"
+         "Reflection/inspect"
+         "Paths/module"
+    ]

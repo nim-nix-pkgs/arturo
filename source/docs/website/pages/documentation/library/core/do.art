@@ -1,0 +1,65 @@
+name: "do"
+type: :function
+module: "Core"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Core.nim#L207"
+description: "evaluate and execute given code"
+returns: [
+        :nothing
+         :any
+    ]
+examples: [
+        {
+            do "print 123"                ; 123
+        }
+         {
+            do [
+                x: 3
+                print ["x =>" x]          ; x => 3
+            ]
+        }
+         {
+            do.import [
+                x: 3
+            ]
+            print ["x =>" x]              ; x => 3
+        }
+         {
+            print do "https://raw.githubusercontent.com/arturo-lang/arturo/master/examples/projecteuler/euler1.art"
+            ; 233168
+        }
+         {
+            do.times: 3 [
+                print "Hello!"
+            ]
+            ; Hello!
+            ; Hello!
+            ; Hello!
+        }
+    ]
+attributes: #[
+    import: #[
+        types: [
+                :logical
+            ]
+        description: "execute at root level"
+        ]
+    times: #[
+        types: [
+                :integer
+            ]
+        description: "repeat block execution given number of times"
+        ]
+    ]
+arguments: #[
+    code: [
+            :string
+             :block
+             :bytecode
+        ]
+    ]
+related: [
+        "Core/dup"
+         "Core/continue"
+         "Crypto/decode"
+         "Core/new"
+    ]

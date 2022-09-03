@@ -1,0 +1,27 @@
+name: "binary?"
+type: :function
+module: "Reflection"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Reflection.nim#L200"
+description: "checks if given value is of type :binary"
+returns: [
+        :logical
+    ]
+examples: [
+        {
+            binary? to :binary "string"
+            ; => true
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    value: [
+            :any
+        ]
+    ]
+related: [
+        "Reflection/dictionary?"
+         "Reflection/char?"
+         "Reflection/integer?"
+         "Reflection/inline?"
+    ]

@@ -1,0 +1,48 @@
+name: "call"
+type: :function
+module: "Core"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Core.nim#L110"
+description: "call function with given list of parameters"
+returns: [
+        :any
+    ]
+examples: [
+        {
+            multiply: function [x y][
+                x * y
+            ]
+            
+            call 'multiply [3 5]          ; => 15
+        }
+         "call $[x][x+2] [5]            ; 7"
+    ]
+attributes: #[
+    external: #[
+        types: [
+                :string
+            ]
+        description: "path to external library"
+        ]
+    expect: #[
+        types: [
+                :type
+            ]
+        description: "expect given return type"
+        ]
+    ]
+arguments: #[
+    function: [
+            :string
+             :literal
+             :function
+        ]
+    params: [
+            :block
+        ]
+    ]
+related: [
+        "Core/case"
+         "Core/unless"
+         "Core/until"
+         "Core/while"
+    ]

@@ -1,0 +1,30 @@
+name: "ensure"
+type: :function
+module: "Core"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Core.nim#L334"
+description: "assert given condition is true, or exit"
+returns: [
+        :nothing
+    ]
+examples: [
+        {
+            num: input "give me a positive number"
+            
+            ensure [num > 0]
+            
+            print "good, the number is positive indeed. let's continue..."
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    condition: [
+            :block
+        ]
+    ]
+related: [
+        "Core/else"
+         "Core/return"
+         "Core/continue"
+         "Core/unless"
+    ]

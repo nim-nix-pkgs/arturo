@@ -1,0 +1,78 @@
+name: "remove"
+type: :function
+module: "Collections"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Collections.nim#L704"
+description: "remove value from given collection"
+returns: [
+        :string
+         :dictionary
+         :block
+         :nothing
+    ]
+alias: "--"
+infix?: true
+examples: [
+        {
+            remove "hello" "l"        ; => "heo"
+            print "hello" -- "l"      ; heo
+        }
+         {
+            str: "mystring"
+            remove 'str "str"         
+            print str                 ; mying
+        }
+         {
+            print remove.once "hello" "l"
+            ; helo
+        }
+         "remove [1 2 3 4] 4        ; => [1 2 3]"
+    ]
+attributes: #[
+    key: #[
+        types: [
+                :logical
+            ]
+        description: "remove dictionary key"
+        ]
+    once: #[
+        types: [
+                :logical
+            ]
+        description: "remove only first occurence"
+        ]
+    index: #[
+        types: [
+                :logical
+            ]
+        description: "remove specific index"
+        ]
+    prefix: #[
+        types: [
+                :logical
+            ]
+        description: "remove first matching prefix from string"
+        ]
+    suffix: #[
+        types: [
+                :logical
+            ]
+        description: "remove first matching suffix from string"
+        ]
+    ]
+arguments: #[
+    collection: [
+            :string
+             :literal
+             :dictionary
+             :block
+        ]
+    value: [
+            :any
+        ]
+    ]
+related: [
+        "Collections/chop"
+         "Collections/reverse"
+         "Collections/sample"
+         "Collections/empty"
+    ]

@@ -1,0 +1,98 @@
+name: "MacOS"
+on:
+  push:
+    branches:
+      - 'master'
+    tags-ignore:
+      - '**'
+  pull_request:
+    paths-ignore:
+      - 'docs/*'
+      - '*.yml'
+      - '*.md'
+      - 'LICENSE'
+
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  
+  build:
+    name: "Build & Test"
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+        version:
+          - mini
+          - full
+    steps:
+      - name: "Cancel similar actions in progress"
+        uses: styfle/cancel-workflow-action@0.10.0
+        with:
+          all_but_latest: true
+          access_token: ${{ github.token }}
+
+      - name: "Checkout"
+        uses: actions/checkout@main
+        with:
+          submodules: recursive
+
+      - name: Get Date
+        id: get-date
+        run: echo "::set-output name=date::$(date "+%Y-%m-%d")"
+        shell: bash
+
+      - name: Cache ChooseNim
+        id: cache-choosenim
+        uses: actions/cache@v3
+        with:
+          path: ~/.choosenim
+          key: ${{ matrix.os }}-choosenim-${{ steps.get-date.outputs.date }}
+        if: runner.os != 'Windows'
+
+      - name: Cache Nimble
+        id: cache-nimble
+        uses: actions/cache@v3
+        with:
+          path: ~/.nimble
+          key: ${{ matrix.os }}-nimble-${{ hashFiles('*.nimble') }}
+        if: runner.os != 'Windows'
+
+      - name: Setup nim
+        uses: jiro4989/setup-nim-action@v1
+        with:
+          nim-version: '1.6.6'
+
+      - name: Verify dependecies
+        run: |
+          nim --version
+          
+      - name: Build Arturo
+        run: |
+          echo "$HOME/.arturo/bin" >> $GITHUB_PATH
+          ./build.nims install ${{ matrix.version }} log
+          
+      - name: Upload Artifacts
+        uses: 'actions/upload-artifact@v2'
+        with:
+          name: "arturo-${{matrix.version}}-${{matrix.os}}"
+          path: bin/arturo
+
+      - name: Run unit tests (full)
+        if: matrix.version == 'full'
+        run: |
+          echo "${{ github.workspace }}/bin" >> $GITHUB_PATH
+          arturo tools/tester.art
+
+      - name: Run unit tests (mini)
+        if: matrix.version == 'mini'
+        run: |
+          echo "${{ github.workspace }}/bin" >> $GITHUB_PATH
+          arturo tools/tester.art

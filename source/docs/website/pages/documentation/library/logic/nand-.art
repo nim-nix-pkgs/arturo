@@ -1,0 +1,41 @@
+name: "nand?"
+type: :function
+module: "Logic"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Logic.nim#L192"
+description: "return the logical NAND for the given values"
+returns: [
+        :logical
+    ]
+examples: [
+        {
+            x: 2
+            y: 3
+            
+            if? nand? x=2 y=3 [
+                print "yep, that's correct!"]
+            ]
+            else [
+                print "nope, that's not correct"
+            ]
+            
+            ; nope, that's not correct
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    valueA: [
+            :logical
+             :block
+        ]
+    valueB: [
+            :logical
+             :block
+        ]
+    ]
+related: [
+        "Logic/and?"
+         "Logic/nor?"
+         "Logic/xnor?"
+         "Logic/xor?"
+    ]

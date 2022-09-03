@@ -1,0 +1,14 @@
+name: "null"
+type: :null
+module: "Core"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Core.nim#L487"
+description: "the NULL constant"
+returns: [
+        :null
+    ]
+related: [
+        "Core/call"
+         "Core/else"
+         "Core/continue"
+         "Core/until"
+    ]

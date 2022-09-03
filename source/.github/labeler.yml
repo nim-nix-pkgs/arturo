@@ -1,0 +1,77 @@
+3rd-party:
+  - src/extras/*
+
+ci:
+  - .github/workflows/freebsd.yml
+  - .github/workflows/linux.yml
+  - .github/workflows/macos.yml
+  - .github/workflows/web.yml
+  - .github/workflows/windows.yml
+
+documentation:
+  - examples/projecteuler/*
+  - examples/rosetta/*
+  - docs/*
+  - docs/wiki/*
+
+evaluator:
+  - src/vm/eval.nim
+ 
+execution:
+  - src/vm/exec.nim
+
+helpers:
+  - src/helpers/*
+  
+installer:
+  - build.nims
+  - src/scripts/update.art
+
+library:
+  - src/library/*
+
+package manager:
+  - src/vm/packager.nim
+  - src/scripts/module.art
+
+parser:
+  - src/vm/parse.nim
+
+repl:
+  - src/scripts/console.art
+  - src/helpers/repl.nim
+  - src/extras/linenoise.nim
+
+ui:
+  - src/extras/libclipboard/*
+  - src/extras/menubar/*
+  - src/extras/pfd/*
+  - src/extras/webview/*
+  - src/extras/window/*
+  - src/extras/libclipboard.nim
+  - src/extras/menubar.nim
+  - src/extras/pfd.nim
+  - src/extras/webview.nim
+  - src/extras/window.nim
+  - src/helpers/clipboard.nim
+  - src/helpers/dialogs.nim
+  - src/helpers/webviews.js
+  - src/helpers/webviews.nim
+  - src/helpers/windows.nim
+  - src/library/Ui.nim
+
+unit-test:
+  - tests/benchmarks/*
+  - tests/unittests/*
+
+error handling: 
+  - src/vm/errors.nim
+
+values:
+  - src/vm/value.nim
+
+vm:
+  - src/vm/*
+
+workflows:
+  - .github/workflows/*

@@ -1,0 +1,32 @@
+name: "extend"
+type: :function
+module: "Collections"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Collections.nim#L275"
+description: "get new dictionary by merging given ones"
+returns: [
+        :dictionary
+    ]
+examples: [
+        {
+            person: #[ name: "john" surname: "doe" ]
+            
+            print extend person #[ age: 35 ]
+            ; [name:john surname:doe age:35]
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    parent: [
+            :dictionary
+        ]
+    additional: [
+            :dictionary
+        ]
+    ]
+related: [
+        "Collections/get"
+         "Collections/flatten"
+         "Collections/keys"
+         "Collections/min"
+    ]

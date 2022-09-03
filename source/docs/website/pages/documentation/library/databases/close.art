@@ -1,0 +1,30 @@
+name: "close"
+type: :function
+module: "Databases"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Databases.nim#L49"
+description: "close given database"
+returns: [
+        :nothing
+    ]
+examples: [
+        {
+            db: open "my.db"    ; opens an SQLite database named 'my.db'
+            
+            print query db "SELECT * FROM users"
+            
+            close db            ; and close it
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    database: [
+            :database
+        ]
+    ]
+related: [
+        "Crypto/encode"
+         "Crypto/decode"
+         "Databases/query"
+         "Files/copy"
+    ]

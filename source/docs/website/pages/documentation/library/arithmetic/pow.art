@@ -1,0 +1,43 @@
+name: "pow"
+type: :function
+module: "Arithmetic"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Arithmetic.nim#L191"
+description: "calculate the power of given values and return result"
+returns: [
+        :integer
+         :floating
+         :complex
+         :nothing
+    ]
+alias: "^"
+infix?: true
+examples: [
+        {
+            print pow 2 3      ; 8
+            print 3 ^ 2        ; 9
+        }
+         {
+            a: 5
+            pow 'a 2           ; a: 25
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    valueA: [
+            :integer
+             :floating
+             :complex
+             :literal
+        ]
+    valueB: [
+            :integer
+             :floating
+        ]
+    ]
+related: [
+        "Arithmetic/mod"
+         "Arithmetic/mul"
+         "Numbers/product"
+         "Arithmetic/sub"
+    ]

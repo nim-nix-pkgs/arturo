@@ -1,0 +1,46 @@
+name: "from"
+type: :function
+module: "Converters"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Converters.nim#L752"
+description: "get value from string, using given representation"
+returns: [
+        :any
+    ]
+examples: [
+        {
+            print from.binary "1011"        ; 11
+            print from.octal "1011"         ; 521
+            print from.hex "0xDEADBEEF"     ; 3735928559
+        }
+    ]
+attributes: #[
+    binary: #[
+        types: [
+                :logical
+            ]
+        description: "get integer from binary representation"
+        ]
+    hex: #[
+        types: [
+                :logical
+            ]
+        description: "get integer from hexadecimal representation"
+        ]
+    octal: #[
+        types: [
+                :logical
+            ]
+        description: "get integer from octal representation"
+        ]
+    ]
+arguments: #[
+    value: [
+            :string
+        ]
+    ]
+related: [
+        "Converters/array"
+         "Converters/function"
+         "Converters/dictionary"
+         "Converters/to"
+    ]

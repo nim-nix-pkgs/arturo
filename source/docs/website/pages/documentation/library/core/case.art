@@ -1,0 +1,30 @@
+name: "case"
+type: :function
+module: "Core"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Core.nim#L158"
+description: "initiate a case block to check for different cases"
+returns: [
+        :nothing
+    ]
+examples: [
+        {
+            a: 2
+            case [a]
+                when? [<2] -> print "a is less than 2"
+                when? [=2] -> print "a is 2"
+                else       -> print "a is greater than 2"
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    predicate: [
+            :block
+        ]
+    ]
+related: [
+        "Core/call"
+         "Core/ensure"
+         "Core/else"
+         "Core/while"
+    ]

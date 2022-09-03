@@ -1,0 +1,32 @@
+name: "all?"
+type: :function
+module: "Logic"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Logic.nim#L31"
+description: "check if all values in given block are true"
+returns: [
+        :logical
+    ]
+examples: [
+        {
+            if all? @[2>1 "DONE"=upper "done" true] 
+                -> print "yes, all are true"
+            ; yes, all are true
+        }
+         {
+            print all? @[true false true true]
+            ; false
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    conditions: [
+            :block
+        ]
+    ]
+related: [
+        "Logic/any?"
+         "Logic/and?"
+         "Logic/nand?"
+         "Logic/or?"
+    ]

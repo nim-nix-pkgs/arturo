@@ -1,0 +1,28 @@
+name: "floating?"
+type: :function
+module: "Reflection"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Reflection.nim#L473"
+description: "checks if given value is of type :floating"
+returns: [
+        :logical
+    ]
+examples: [
+        {
+            print floating? 3.14        ; true
+            print floating? 123         ; false
+            print floating? "hello"     ; false
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    value: [
+            :any
+        ]
+    ]
+related: [
+        "Reflection/string?"
+         "Reflection/function?"
+         "Reflection/logical?"
+         "Reflection/inline?"
+    ]

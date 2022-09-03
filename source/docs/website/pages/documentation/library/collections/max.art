@@ -1,0 +1,25 @@
+name: "max"
+type: :function
+module: "Collections"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Collections.nim#L632"
+description: "get maximum element in given collection"
+returns: [
+        :null
+         :any
+    ]
+examples: [
+        "print max [4 2 8 5 1 9]       ; 9"
+    ]
+attributes: #[
+    ]
+arguments: #[
+    collection: [
+            :block
+        ]
+    ]
+related: [
+        "Collections/min"
+         "Collections/sample"
+         "Collections/last"
+         "Collections/combine"
+    ]

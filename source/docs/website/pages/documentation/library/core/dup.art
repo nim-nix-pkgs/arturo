@@ -1,0 +1,37 @@
+name: "dup"
+type: :function
+module: "Core"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Core.nim#L285"
+description: "duplicate the top of the stack and convert non-returning call to a do-return call"
+returns: [
+        :nothing
+    ]
+alias: "<="
+infix?: false
+examples: [
+        {
+            ; a label normally consumes its inputs
+            ; and returns nothing
+            
+            ; using dup before a call, the non-returning function
+            ; becomes a returning one
+            
+            a: b: <= 3
+            
+            print a         ; 3
+            print b         ; 3
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    value: [
+            :any
+        ]
+    ]
+related: [
+        "Core/until"
+         "Core/unless"
+         "Core/do"
+         "Core/ensure"
+    ]

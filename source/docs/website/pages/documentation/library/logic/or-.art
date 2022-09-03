@@ -1,0 +1,38 @@
+name: "or?"
+type: :function
+module: "Logic"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Logic.nim#L316"
+description: "return the logical OR for the given values"
+returns: [
+        :logical
+    ]
+examples: [
+        {
+            x: 2
+            y: 4
+            
+            if or? x=2 y>5 [
+                print "yep, that's correct!"]
+            ]
+            
+            ; yep, that's correct!
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    valueA: [
+            :logical
+             :block
+        ]
+    valueB: [
+            :logical
+             :block
+        ]
+    ]
+related: [
+        "Logic/xor?"
+         "Logic/nor?"
+         "Logic/and?"
+         "Logic/not?"
+    ]

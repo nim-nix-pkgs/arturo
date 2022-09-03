@@ -1,0 +1,27 @@
+name: "permutate"
+type: :function
+module: "Collections"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Collections.nim#L682"
+description: "get all possible permutations of the elements in given collection"
+returns: [
+        :block
+    ]
+examples: [
+        {
+            permutate [A B C]
+            ; => [[A B C] [A C B] [C A B] [B A C] [B C A] [C B A]]
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    collection: [
+            :block
+        ]
+    ]
+related: [
+        "Collections/combine"
+         "Collections/repeat"
+         "Collections/sample"
+         "Collections/first"
+    ]

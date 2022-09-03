@@ -1,0 +1,27 @@
+name: "database?"
+type: :function
+module: "Reflection"
+source: "https://github.com/arturo-lang/arturo/blob/master/src/library/Reflection.nim#L250"
+description: "checks if given value is of type :database"
+returns: [
+        :logical
+    ]
+examples: [
+        {
+            database? open "my.db"
+            ; => true
+        }
+    ]
+attributes: #[
+    ]
+arguments: #[
+    value: [
+            :any
+        ]
+    ]
+related: [
+        "Reflection/pathLabel?"
+         "Reflection/date?"
+         "Reflection/attribute?"
+         "Reflection/label?"
+    ]
