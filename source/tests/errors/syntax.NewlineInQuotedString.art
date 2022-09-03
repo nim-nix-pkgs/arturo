@@ -1,8 +1,0 @@
-print {
-    done
-}
-this "something else
-
-"
-
-print "hello"

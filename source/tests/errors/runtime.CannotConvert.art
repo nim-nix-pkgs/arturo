@@ -1,3 +1,0 @@
-print to :integer "123"
-print to :string 123
-print to :date 1.2

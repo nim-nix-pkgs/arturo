@@ -1,2 +1,0 @@
-got: execute "arturo --no-color filenotthere.art"
-print got

@@ -1,3 +1,0 @@
-print to :logical "true"
-print to :logical "false"
-print to :logical "boom"

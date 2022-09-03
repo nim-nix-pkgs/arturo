@@ -1,3 +1,0 @@
-select read.lines "unixdict.txt" 'l -> 
-    and? contains? l "the" 
-         11 < size l

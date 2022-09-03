@@ -1,1 +1,0 @@
-[celcius:-173.15 fahrenheit:-279.67 rankine:180.0]

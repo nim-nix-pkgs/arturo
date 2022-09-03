@@ -1,2 +1,0 @@
-primes: select 2..110000 => prime?
-print primes\[10000]

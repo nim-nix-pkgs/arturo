@@ -1,7 +1,0 @@
-a: true
-b: false
-
-if? a [ print "yep" ] else [ print "nope" ]
-
-if? b -> print "nope" 
-else  -> print "yep"
